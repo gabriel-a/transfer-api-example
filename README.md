@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/gabriel-a/transfer-api-example.svg?style=svg)](https://circleci.com/gh/gabriel-a/transfer-api-example)
+
 # transfer-api-example
 Transfer API Example with Spring boot and in memory database
 
