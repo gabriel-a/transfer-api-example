@@ -12,20 +12,18 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class TransferapiApplication {
+public class TransferApiApplication {
 
-	private static final Logger log = LoggerFactory.getLogger(TransferapiApplication.class);
+	private static final Logger log = LoggerFactory.getLogger(TransferApiApplication.class);
 	public static void main(String[] args) {
-		SpringApplication.run(TransferapiApplication.class, args);
+		SpringApplication.run(TransferApiApplication.class, args);
 	}
 
 	@Bean
 	CommandLineRunner init(TransferRepository transferRepository) {
 		return (args) -> {
 			log.info("Adding transfer items into the database.");
-			TransferItemsData.GetData().forEach(transferItem -> {
-				transferRepository.save(transferItem);
-			});
+			TransferItemsData.GetData().forEach(transferRepository::save);
 		};
 	}
 
